@@ -40,7 +40,8 @@ const validateCred = arr => {
     /*
     two functions: isOdd() checks if the length of an array is odd,
     then everyOther() uses isOdd() result (true or false) to return
-    an equation for either checking if the index is even or odd.
+    an equation to check if the index is even or to return an 
+    equation to check if the index is odd.
 
     this is because the elements need to be counted from the right
     (last element) rather than left (first element), and the starting
@@ -89,8 +90,7 @@ const findInvalidCards = nestedArr => {
     let newNested = [];
 
     /*
-    .forEach() executes validateCred() on each element
-    of nestedArr and adds any element returning false
+    .forEach() executes validateCred() on each element of nestedArr and adds any element returning false
     to the newNested, thus creating an array of all invalid cards
     */
     nestedArr.forEach(card => {
