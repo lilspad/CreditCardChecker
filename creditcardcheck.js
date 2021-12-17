@@ -32,9 +32,7 @@ the credit card number passed as a parameter is valid,
 returning true if it is, and false if it's invalid
 */
 const validateCred = arr => {
-    // declaring a new variable to hold the sum of all the numbers in an array
     let sum = 0;
-    // substracting 1 from arr.length in order to match index values (starting at 0, rather than 1)
     let length = arr.length - 1;
 
     /*
@@ -86,13 +84,7 @@ const validateCred = arr => {
 
 // findInvalidCards() checks a nested array such as batch provided above, and returns all the invalid cards
 const findInvalidCards = nestedArr => {
-    //declaring a new array to add invalid cards to
     let newNested = [];
-
-    /*
-    .forEach() executes validateCred() on each element of nestedArr and adds any element returning false
-    to the newNested, thus creating an array of all invalid cards
-    */
     nestedArr.forEach(card => {
         if (!validateCred(card)) {
             newNested.push(card);
@@ -109,15 +101,7 @@ digit of each card number and compare it to four unique digits
 identifying a company
 */
 function idInvalidCardCompanies(invalidCards) {
-    //new array to store all the company names
     let companyNames = [];
-
-    /*
-    this loop checks the first digit of each number found in the nested
-    array, and uses switch case to push() the correct company name to
-    companyNames, according to their unique number. if there is no
-    corresponding number, it returns 'Company not found' instead
-    */
     for (i = 0; i < invalidCards.length; i++) {
 
         let firstDigit = invalidCards[i][0];
@@ -142,7 +126,6 @@ function idInvalidCardCompanies(invalidCards) {
 
     //.filter() is applied to companyNames to get rid off duplicates 
     const finalNames = companyNames.filter((id, index) => companyNames.indexOf(id) === index);
-    //final array with company names that issued invalid cards
     return finalNames;
 }
 
